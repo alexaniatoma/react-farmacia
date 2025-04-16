@@ -1,9 +1,7 @@
-import Produto from "./Produto";
-
   export default interface Categoria {
-id: number,
-nome: string,
-descricao: string,
-produto?: Produto[] |null;
+    id?: number | null
+    nome: string;
+    descricao: string,
+
 }
 

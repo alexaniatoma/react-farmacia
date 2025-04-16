@@ -1,24 +1,21 @@
-import { useNavigate } from "react-router-dom";
 import CardCategorias from "../cardcategoria/CardCategorias"
 import { useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
-import FormCategoria from '../formcategoria/FormCategoria';
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 
 function ListaCategorias() {
 
-    const navigate = useNavigate();
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
     async function buscarCategorias() {
         try {
-        await buscar('/categorias', setCategorias,{ headers: {}
-        })
+        await buscar('/categorias', setCategorias)
+        
     }catch (error: any) {
-        if (error.toString().includes('403')) {    
-        }
+        alert (error.toString().includes('403'))  
+        
     } 
         
 }
