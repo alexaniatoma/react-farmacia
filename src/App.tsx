@@ -5,13 +5,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import ListaCategorias from "./components/categoria/listacategorias/ListaCategorias";
 import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
 
   return (
     <>
+    <ToastContainer />
      <BrowserRouter>
        <Navbar />
           <div className="min-h-[80vh]">

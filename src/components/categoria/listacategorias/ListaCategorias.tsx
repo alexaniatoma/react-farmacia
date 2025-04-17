@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaCategorias() {
-
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
@@ -14,10 +14,8 @@ function ListaCategorias() {
         await buscar('/categorias', setCategorias)
         
     }catch (error: any) {
-        alert (error.toString().includes('403'))  
-        
-    } 
-        
+        ToastAlerta (error.toString().includes('403'), 'erro')          
+    }         
 }
 
  useEffect(() => {
@@ -42,8 +40,7 @@ function ListaCategorias() {
                                 lg:grid-cols-3 gap-8">
                                     {categorias.map((categoria) => (
                             <CardCategorias key={categoria.id} categoria={categoria} />
-                        ))}
-                                    
+                        ))}                                    
                 </div>
             </div>
         </div>

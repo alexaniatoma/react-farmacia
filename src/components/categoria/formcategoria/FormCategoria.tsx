@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 import { ChangeEvent, useEffect, useState } from "react";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function FormCategoria() {
@@ -15,10 +16,9 @@ function FormCategoria() {
         try {
             await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
-            alert("Erro na categoria")                
+            ToastAlerta("Erro na categoria" , 'erro')                
         }
-    }
-    
+    }   
     
     useEffect(() => {
         if (id !== undefined) {
@@ -42,17 +42,17 @@ function FormCategoria() {
             if (id !== undefined) {
             try {
                 await atualizar(`/categorias`, categoria, setCategoria)                 
-                    alert('Categoria foi atualizado com sucesso!')
+                ToastAlerta('Categoria foi atualizado com sucesso!', 'info')
             } catch (error: any) {
-                alert('Erro ao atualizar a categoria.')
+                ToastAlerta('Erro ao atualizar a categoria.', 'erro')
             }
             
         } else {
             try {
                 await cadastrar(`/categorias`, categoria, setCategoria)               
-                  alert('Categoria foi cadastrado com sucesso!')
+                ToastAlerta('Categoria foi cadastrado com sucesso!', 'info')
             } catch (error: any) {
-                alert('Erro ao cadastrar o categoria.')
+                ToastAlerta('Erro ao cadastrar o categoria.' , 'erro')
                 }
             }
         
