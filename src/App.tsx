@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import ListaCategorias from "./components/categoria/listacategorias/ListaCategorias";
+import DeletarCategoria from './components/categoria/deletarCategoria/DeletarCategoria';
 
 
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="/categorias" element={<ListaCategorias/>} />
               <Route path="/cadastrarcategorias" element={<FormCategoria />} />
               <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+              <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             </Routes>
           </div>
           <Footer />          

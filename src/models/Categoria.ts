@@ -2,6 +2,5 @@
     id?: number | null
     nome: string;
     descricao: string,
-
 }
 

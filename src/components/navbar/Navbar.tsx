@@ -11,7 +11,6 @@ function Navbar() {
                     <div className='flex gap-4'>
                         <Link to="/categorias" className="hover:underline">Lista Categorias</Link>                       
                         <Link to="/cadastrarcategorias" className="hover:underline">Cadastrar Categorias</Link> 
-                        Sair
                     </div>
                 </div>
             </div>
