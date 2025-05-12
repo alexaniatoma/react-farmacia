@@ -1,5 +1,5 @@
 
-💊 Farmacia <br> <br>
+💊 Farmácia <br> <br>
 Projeto Fullstack desenvolvido com Spring Boot, React, Tailwind CSS, integrando consumo de API. <br> <br>
 
 🚀 Tecnologias Utilizadas
